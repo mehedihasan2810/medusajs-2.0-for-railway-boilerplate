@@ -23,7 +23,7 @@ export default async function userInviteHandler({
       data: {
         emailOptions: {
           replyTo: 'info@example.com',
-          subject: "You've been invited to Medusa!"
+          subject: "You've been invited to CapeTune!"
         },
         inviteLink: `${BACKEND_URL}/app/invite?token=${invite.token}`,
         preview: 'The administration dashboard awaits...'
