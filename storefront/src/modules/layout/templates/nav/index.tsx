@@ -5,6 +5,7 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import { MagnifyingGlass } from "@medusajs/icons"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
@@ -33,16 +34,16 @@ export default async function Nav() {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.NEXT_PUBLIC_FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base"
+                  className="hover:text-ui-fg-base text-base"
                   href="/search"
                   scroll={false}
                   data-testid="nav-search-link"
                 >
-                  Search
+                  <MagnifyingGlass />
                 </LocalizedClientLink>
               )}
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
+                className="hover:text-ui-fg-base text-base"
                 href="/account"
                 data-testid="nav-account-link"
               >
@@ -52,7 +53,7 @@ export default async function Nav() {
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
+                  className="hover:text-ui-fg-base flex gap-2 !text-base"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
@@ -60,7 +61,7 @@ export default async function Nav() {
                 </LocalizedClientLink>
               }
             >
-              <CartButton />
+              <CartButton  />
             </Suspense>
           </div>
         </nav>

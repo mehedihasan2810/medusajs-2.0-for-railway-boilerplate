@@ -15,7 +15,7 @@ const Hero = () => {
             unbeatable prices. Elevate your tech experience—shop with confidence
             and enjoy fast, reliable shipping!
           </p>
-          <Link href={`/gb/store`} className="mt-6 block">
+          <Link href={`/store`} className="mt-6 block">
             <Button size="xlarge">Shop Now</Button>
           </Link>
         </div>
