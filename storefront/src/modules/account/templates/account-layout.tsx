@@ -4,6 +4,7 @@ import UnderlineLink from "@modules/common/components/interactive-link"
 
 import AccountNav from "../components/account-nav"
 import { HttpTypes } from "@medusajs/types"
+import Link from "next/link"
 
 interface AccountLayoutProps {
   customer: HttpTypes.StoreCustomer | null
@@ -30,9 +31,9 @@ const AccountLayout: React.FC<AccountLayoutProps> = ({
             </span> */}
           </div>
           <div>
-            <UnderlineLink href="mailto:info@capetune.com">
+            <Link href="mailto:info@capetune.com" className="text-ui-fg-interactive hover:underline">
               info@capetune.com
-            </UnderlineLink>
+            </Link>
           </div>
         </div>
       </div>
