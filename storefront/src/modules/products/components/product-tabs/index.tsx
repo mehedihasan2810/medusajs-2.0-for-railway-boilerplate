@@ -1,8 +1,6 @@
 "use client"
 
-import Back from "@modules/common/icons/back"
-import FastDelivery from "@modules/common/icons/fast-delivery"
-import Refresh from "@modules/common/icons/refresh"
+import { DollarSign, ShieldCheck, Truck } from "lucide-react"
 
 import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
@@ -14,11 +12,15 @@ type ProductTabsProps = {
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = [
     {
+      label: "Description",
+      component: <DescriptionTab product={product} />,
+    },
+    {
       label: "Product Information",
       component: <ProductInfoTab product={product} />,
     },
     {
-      label: "Shipping & Returns",
+      label: "Payment & Shipping",
       component: <ShippingInfoTab />,
     },
   ]
@@ -37,6 +39,14 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
           </Accordion.Item>
         ))}
       </Accordion>
+    </div>
+  )
+}
+
+const DescriptionTab = ({ product }: ProductTabsProps) => {
+  return (
+    <div className="text-small-regular py-8">
+      <p className="max-w-sm">{product.description}</p>
     </div>
   )
 }
@@ -83,33 +93,32 @@ const ShippingInfoTab = () => {
     <div className="text-small-regular py-8">
       <div className="grid grid-cols-1 gap-y-8">
         <div className="flex items-start gap-x-2">
-          <FastDelivery />
+          <DollarSign />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Payments</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+              We accept payments by Debit and Credit Card via PayPal payment
+              service and by TT Direct Bank Transfer for Businesses with VAT.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
-          <Refresh />
+          <ShieldCheck />
           <div>
-            <span className="font-semibold">Simple exchanges</span>
+            <span className="font-semibold">Guarantee</span>
             <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
+              All our goods come with 12 months Warranty with free repairs or
+              Exchange within this period on faulty products.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
-          <Back />
+          <Truck />
           <div>
-            <span className="font-semibold">Easy returns</span>
+            <span className="font-semibold">Delivery</span>
             <p className="max-w-sm">
-              Just return your product and we&apos;ll refund your money. No
-              questions asked – we&apos;ll do our best to make sure your return
-              is hassle-free.
+              All goods are shipped same day for next day delivery if you order
+              before 1 PM. International deliveries will take longer.
             </p>
           </div>
         </div>
