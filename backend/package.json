@@ -1,8 +1,8 @@
 {
-  "name": "medusa-2.0-boilerplate-backend",
+  "name": "capetune-backend",
   "version": "0.0.2",
-  "description": "A Prebaked Medusa 2.0 backend",
-  "author": "Rasmus Puls",
+  "description": "CapeTune backend",
+  "author": "CapeTune",
   "license": "MIT",
   "keywords": [
     "sqlite",
