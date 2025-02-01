@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const Hero = () => {
   return (
-    <div className=" md:h-[75vh] w-full relative bg-neutral-100 px-4">
+    <div className=" md:h-[75vh] w-full relative bg-neutral-100 px-4 border-b border-ui-border-base">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 md:gap-8 h-full py-16 md:py-0">
         <div className="self-center justify-center w-fit">
           <h1 className="text-2xl md:text-6xl font-bold">CAPETUNE</h1>
