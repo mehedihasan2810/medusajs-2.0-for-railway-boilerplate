@@ -1,21 +1,20 @@
 import { Button, Heading } from "@medusajs/ui"
-import { buttonVariants } from "@medusajs/ui/dist/cjs/components/button"
 import Image from "next/image"
 import Link from "next/link"
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full relative bg-neutral-100 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-8 h-full">
+    <div className=" md:h-[75vh] w-full relative bg-neutral-100 px-4">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 md:gap-8 h-full py-16 md:py-0">
         <div className="self-center justify-center w-fit">
-          <h1 className="text-6xl font-bold">CAPETUNE</h1>
-          <p className="mt-6 text-lg">
+          <h1 className="text-2xl md:text-6xl font-bold">CAPETUNE</h1>
+          <p className="mt-4 md:mt-6 text-base md:text-lg">
             Discover the latest and greatest in electronics. From cutting-edge
             gadgets to essential accessories, we offer premium products at
             unbeatable prices. Elevate your tech experience—shop with confidence
             and enjoy fast, reliable shipping!
           </p>
-          <Link href={`/store`} className="mt-6 block">
+          <Link prefetch={true} href={`/store`} className="mt-6 block">
             <Button size="xlarge">Shop Now</Button>
           </Link>
         </div>

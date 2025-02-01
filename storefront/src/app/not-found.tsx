@@ -18,6 +18,7 @@ export default function NotFound() {
       <Link
         className="flex gap-x-1 items-center group"
         href="/"
+        prefetch={true}
       >
         <Text className="text-ui-fg-interactive">Go to frontpage</Text>
         <ArrowUpRightMini

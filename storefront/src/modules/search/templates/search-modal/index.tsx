@@ -1,7 +1,7 @@
 "use client"
 
 import { InstantSearch } from "react-instantsearch-hooks-web"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 import { MagnifyingGlassMini } from "@medusajs/icons"
 
 import { SEARCH_INDEX_NAME, searchClient } from "@lib/search-client"

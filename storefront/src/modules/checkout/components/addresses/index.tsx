@@ -1,8 +1,10 @@
 "use client"
 
+// @ts-ignore
 import { CheckCircleSolid } from "@medusajs/icons"
 import { Heading, Text, useToggleState } from "@medusajs/ui"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname,  useSearchParams } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 
 import Divider from "@modules/common/components/divider"
 import Spinner from "@modules/common/icons/spinner"
