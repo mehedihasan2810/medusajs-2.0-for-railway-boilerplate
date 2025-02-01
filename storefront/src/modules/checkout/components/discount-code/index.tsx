@@ -6,7 +6,7 @@ import { useFormState } from "react-dom"
 
 import { applyPromotions, submitPromotionForm } from "@lib/data/cart"
 import { convertToLocale } from "@lib/util/money"
-import { InformationCircleSolid } from "@medusajs/icons"
+// import { InformationCircleSolid } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import Trash from "@modules/common/icons/trash"
 import ErrorMessage from "../error-message"
@@ -56,7 +56,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
     <div className="w-full bg-white flex flex-col">
       <div className="txt-medium">
         <form action={(a) => addPromotionCode(a)} className="w-full mb-5">
-          <Label className="flex gap-x-1 my-2 items-center">
+          {/* <Label className="flex gap-x-1 my-2 items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
@@ -66,12 +66,12 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
               Add Promotion Code(s)
             </button>
 
-            {/* <Tooltip content="You can add multiple promotion codes">
+            <Tooltip content="You can add multiple promotion codes">
               <InformationCircleSolid color="var(--fg-muted)" />
-            </Tooltip> */}
-          </Label>
+            </Tooltip>
+          </Label> */}
 
-          {isOpen && (
+          {/* {isOpen && (
             <>
               <div className="flex w-full gap-x-2">
                 <Input
@@ -95,7 +95,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                 data-testid="discount-error-message"
               />
             </>
-          )}
+          )} */}
         </form>
 
         {promotions.length > 0 && (

@@ -16,12 +16,12 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
       component: <DescriptionTab product={product} />,
     },
     {
-      label: "Product Information",
-      component: <ProductInfoTab product={product} />,
-    },
-    {
       label: "Payment & Shipping",
       component: <ShippingInfoTab />,
+    },
+    {
+      label: "Product Information",
+      component: <ProductInfoTab product={product} />,
     },
   ]
 
@@ -46,7 +46,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 const DescriptionTab = ({ product }: ProductTabsProps) => {
   return (
     <div className="text-small-regular py-8">
-      <p className="max-w-sm">{product.description}</p>
+      <p className="max-w-sm whitespace-pre-line">{product.description}</p>
     </div>
   )
 }
