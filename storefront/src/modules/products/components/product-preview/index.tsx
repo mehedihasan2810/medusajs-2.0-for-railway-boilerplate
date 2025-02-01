@@ -37,7 +37,7 @@ export default async function ProductPreview({
           images={product.images}
           size="full"
           isFeatured={isFeatured}
-          className="aspect-square size-[400px] bg-neutral-100 hover:opacity-85 transition-opacity"
+          className="aspect-square size-[400px] bg-neutral-100 hover:opacity-85 transition-opacity !object-contain"
         />
         <div className="flex txt-compact-medium mt-4 justify-between">
           <Text className="text-ui-fg-subtle text-base font-semibold" data-testid="product-title">
