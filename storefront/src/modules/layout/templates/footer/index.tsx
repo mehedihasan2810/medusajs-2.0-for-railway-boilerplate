@@ -138,7 +138,7 @@ export default async function Footer() {
                 </li>
                 <li>
                   <LocalizedClientLink
-                    href="/contact-us"
+                    href="/contact"
                     className="hover:text-ui-fg-base"
                   >
                     Contact Us
