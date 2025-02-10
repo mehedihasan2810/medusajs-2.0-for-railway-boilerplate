@@ -11,6 +11,8 @@ import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Home: "/",
+  "GSM 4G Deskphones": "/gsm-desk-phones",
+  "CCTV Products": "/cctv-products",
   Store: "/store",
   Search: "/search",
   Account: "/account",
@@ -31,7 +33,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                   data-testid="nav-menu-button"
                   className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base text-base"
                 >
-                  <BarsThree className="mr-1"/>
+                  <BarsThree className="mr-1" />
                   Menu
                 </Popover.Button>
               </div>
