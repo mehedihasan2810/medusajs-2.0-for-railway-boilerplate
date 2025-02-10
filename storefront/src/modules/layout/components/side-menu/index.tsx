@@ -11,8 +11,8 @@ import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Home: "/",
-  "GSM 4G Deskphones": "/gsm-desk-phones",
-  "CCTV Products": "/cctv-products",
+  "GSM 4G Deskphones": "/categories/gsm-desk-phones",
+  "CCTV Products": "/categories/cctv-products",
   Store: "/store",
   Search: "/search",
   Account: "/account",
