@@ -4,6 +4,7 @@ import { Text, clx } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
+import Link from "next/link"
 
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
@@ -27,7 +28,7 @@ export default async function Footer() {
               confidence and enjoy fast, reliable shipping!
             </p>
           </div>
-          <div className="text-sm gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
+          <div className="text-sm gap-10 md:gap-x-16 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {product_categories && product_categories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
                 <span className="font-semibold text-base">Categories</span>
@@ -108,41 +109,66 @@ export default async function Footer() {
                 </ul>
               </div>
             )}
-            {/* <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
+            <div className="flex flex-col gap-y-2">
+              <span className="font-semibold text-base">Support</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
-                  <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/clearance"
                     className="hover:text-ui-fg-base"
                   >
-                    GitHub
-                  </a>
+                    Clearance
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/information"
                     className="hover:text-ui-fg-base"
                   >
-                    Documentation
-                  </a>
+                    Information
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/medusajs/nextjs-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/about-us"
                     className="hover:text-ui-fg-base"
                   >
-                    Source code
-                  </a>
+                    About Us
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/contact-us"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Contact Us
+                  </LocalizedClientLink>
                 </li>
               </ul>
-            </div> */}
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <span className="font-semibold text-base">Legal</span>
+              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
+                <li>
+                  <LocalizedClientLink
+                    href="/privacy-policy"
+                    className="hover:text-ui-fg-base"
+                  >
+                  Privacy Policy
+                 
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/terms-and-conditions"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Terms & Condtions
+                  </LocalizedClientLink>
+                </li>
+                
+              </ul>
+            </div>
           </div>
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
