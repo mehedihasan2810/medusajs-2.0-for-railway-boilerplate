@@ -2,8 +2,9 @@
 
 import { Popover, Transition } from "@headlessui/react"
 import { ArrowRightMini, XMark, BarsThree } from "@medusajs/icons"
+import { ChevronLeft, ChevronDown, ChevronRight } from "lucide-react"
 import { Text, clx, useToggleState } from "@medusajs/ui"
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CountrySelect from "../country-select"
@@ -11,8 +12,21 @@ import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Home: "/",
-  "GSM 4G Deskphones": "/categories/gsm-desk-phones",
-  "CCTV Products": "/categories/cctv-products",
+  "TELECOM Products": {
+    path: "/categories/gsm-desk-phones",
+    submenu: [
+      { name: "4G GSM Desk Phones", path: "/categories/gsm-desk-phones" },
+      { name: "Accessories", path: "/categories/telecom-accessories" },
+    ],
+  },
+  "CCTV Products": {
+    path: "/categories/cctv-products",
+    submenu: [
+      { name: "Digital Video Recorders", path: "/categories/digital-video-recorders" },
+      { name: "CCTV Cameras", path: "/categories/cctv-products" },
+    ],
+  },
+  // "CCTV Products": "/categories/cctv-products",
   Store: "/store",
   Search: "/search",
   Account: "/account",
@@ -21,6 +35,23 @@ const SideMenuItems = {
 
 const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
   const toggleState = useToggleState()
+
+  const [openSubmenus, setOpenSubmenus] = useState<{ [key: string]: boolean }>(
+    () => {
+      const initialState: { [key: string]: boolean } = {}
+      Object.keys(SideMenuItems).forEach((key) => {
+        initialState[key] = false
+      })
+      return initialState
+    }
+  )
+
+  const toggleSubmenu = (name: string) => {
+    setOpenSubmenus((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }))
+  }
 
   return (
     <div className="h-full">
@@ -59,17 +90,58 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                       </button>
                     </div>
                     <ul className="flex flex-col gap-6 items-start justify-start">
-                      {Object.entries(SideMenuItems).map(([name, href]) => {
+                      {Object.entries(SideMenuItems).map(([name, item]) => {
+                        const hasSubmenu =
+                          typeof item === "object" &&
+                          item !== null &&
+                          item.submenu
+                        const href = hasSubmenu ? item.path : item
+
                         return (
                           <li key={name}>
-                            <LocalizedClientLink
-                              href={href}
-                              className="text-3xl leading-10 hover:text-neutral-300"
-                              onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
-                            >
-                              {name}
-                            </LocalizedClientLink>
+                            {hasSubmenu ? (
+                              <>
+                                <button
+                                  className="text-3xl leading-10 hover:text-neutral-300 flex items-end gap-2"
+                                  onClick={() => toggleSubmenu(name)}
+                                >
+                                  <span>{name}</span>
+                                  <ChevronRight className={clx("size-8 inline-block shrink-0 transition-transform", openSubmenus[name] ? "rotate-90" : "")} />
+                                </button>
+                                <Transition
+                                  show={openSubmenus[name]}
+                                  as={Fragment}
+                                  enter="transition-all duration-300"
+                                  enterFrom="max-h-0 opacity-0 overflow-hidden"
+                                  enterTo="max-h-[500px] opacity-100 overflow-hidden"
+                                  leave="transition-all duration-300"
+                                  leaveFrom="max-h-[500px] opacity-100 overflow-hidden"
+                                  leaveTo="max-h-0 opacity-0 overflow-hidden"
+                                >
+                                  <ul className="flex flex-col gap-2 pl-6 mt-2">
+                                    {item.submenu.map((subItem) => (
+                                      <li key={subItem.name}>
+                                        <LocalizedClientLink
+                                          href={subItem.path}
+                                          className="text-2xl leading-10 hover:text-neutral-300"
+                                          data-testid={`${subItem.name.toLowerCase()}-link`}
+                                        >
+                                          {subItem.name}
+                                        </LocalizedClientLink>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </Transition>
+                              </>
+                            ) : (
+                              <LocalizedClientLink
+                                href={href}
+                                className="text-3xl leading-10 hover:text-neutral-300"
+                                data-testid={`${name.toLowerCase()}-link`}
+                              >
+                                {name}
+                              </LocalizedClientLink>
+                            )}
                           </li>
                         )
                       })}
