@@ -19,7 +19,7 @@ export default async function Footer() {
               href="/"
               className="txt-compact-xlarge-plus uppercase"
             >
-              CapeTune Store
+              Capetune Store
             </LocalizedClientLink>
             <p className="max-w-[400px] mt-4 text-neutral-600">
               Discover the latest and greatest in electronics. From cutting-edge
@@ -173,7 +173,7 @@ export default async function Footer() {
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="text-sm">
-            © {new Date().getFullYear()} CapeTune Store. All rights reserved.
+            © {new Date().getFullYear()} Capetune Store. All rights reserved.
           </Text>
           <div></div>
           {/* <MedusaCTA /> */}

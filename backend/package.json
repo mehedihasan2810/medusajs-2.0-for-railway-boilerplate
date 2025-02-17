@@ -1,8 +1,8 @@
 {
   "name": "capetune-backend",
   "version": "0.0.2",
-  "description": "CapeTune backend",
-  "author": "CapeTune",
+  "description": "Capetune backend",
+  "author": "Capetune",
   "license": "MIT",
   "keywords": [
     "sqlite",

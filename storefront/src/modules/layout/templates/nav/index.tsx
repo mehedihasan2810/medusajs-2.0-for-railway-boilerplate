@@ -26,7 +26,7 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              CapeTune Store
+              Capetune Store
             </LocalizedClientLink>
           </div>
 

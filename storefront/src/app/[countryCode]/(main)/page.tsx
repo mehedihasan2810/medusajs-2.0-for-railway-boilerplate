@@ -6,9 +6,9 @@ import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
-  title: "CapeTune",
+  title: "Capetune",
   description:
-    "CapeTune is an electronics e-commerce store that sells the best products at the best prices.",
+    "Capetune is an electronics e-commerce store that sells the best products at the best prices.",
 }
 
 export default async function Home({

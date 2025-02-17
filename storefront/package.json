@@ -2,10 +2,10 @@
   "name": "capetune-storefront",
   "version": "1.0.3",
   "private": true,
-  "author": "CapeTune",
-  "description": "CapeTune Storefront",
+  "author": "Capetune",
+  "description": "Capetune Storefront",
   "keywords": [
-    "CapeTune"
+    "Capetune"
   ],
   "scripts": {
     "wait": "await-backend",

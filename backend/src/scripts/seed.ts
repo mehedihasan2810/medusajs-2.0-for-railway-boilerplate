@@ -329,7 +329,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
     input: {
       products: [
         {
-          title: "CapeTune T-Shirt",
+          title: "Capetune T-Shirt",
           category_ids: [
             categoryResult.find((cat) => cat.name === "Shirts")!.id,
           ],
@@ -515,7 +515,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
           ],
         },
         {
-          title: "CapeTune Sweatshirt",
+          title: "Capetune Sweatshirt",
           category_ids: [
             categoryResult.find((cat) => cat.name === "Sweatshirts")!.id,
           ],
@@ -615,7 +615,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
           ],
         },
         {
-          title: "CapeTune Sweatpants",
+          title: "Capetune Sweatpants",
           category_ids: [
             categoryResult.find((cat) => cat.name === "Pants")!.id,
           ],
@@ -715,7 +715,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
           ],
         },
         {
-          title: "CapeTune Shorts",
+          title: "Capetune Shorts",
           category_ids: [
             categoryResult.find((cat) => cat.name === "Merch")!.id,
           ],

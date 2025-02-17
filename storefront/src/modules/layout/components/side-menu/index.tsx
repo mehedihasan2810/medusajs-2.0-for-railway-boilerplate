@@ -94,7 +94,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} CapeTune Store. All rights
+                        © {new Date().getFullYear()} Capetune Store. All rights
                         reserved.
                       </Text>
                     </div>
