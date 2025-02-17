@@ -32,6 +32,7 @@ const SideMenuItems = {
   },
   // "CCTV Products": "/categories/cctv-products",
 
+  Sale: "/collections/sale",
   Search: "/search",
   Account: "/account",
   Cart: "/cart",
