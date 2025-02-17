@@ -110,24 +110,8 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="font-semibold text-base">Support</span>
+              <span className="font-semibold text-base">Information</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
-                <li>
-                  <LocalizedClientLink
-                    href="/clearance"
-                    className="hover:text-ui-fg-base"
-                  >
-                    Clearance
-                  </LocalizedClientLink>
-                </li>
-                <li>
-                  <LocalizedClientLink
-                    href="/information"
-                    className="hover:text-ui-fg-base"
-                  >
-                    Information
-                  </LocalizedClientLink>
-                </li>
                 <li>
                   <LocalizedClientLink
                     href="/about-us"
@@ -138,37 +122,61 @@ export default async function Footer() {
                 </li>
                 <li>
                   <LocalizedClientLink
-                    href="/contact"
+                    href="/terms-and-conditions"
                     className="hover:text-ui-fg-base"
                   >
-                    Contact Us
+                    Terms & Conditions
                   </LocalizedClientLink>
                 </li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <span className="font-semibold text-base">Legal</span>
-              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
                   <LocalizedClientLink
                     href="/privacy-policy"
                     className="hover:text-ui-fg-base"
                   >
-                  Privacy Policy
-                 
+                    Privacy Policy
                   </LocalizedClientLink>
                 </li>
                 <li>
                   <LocalizedClientLink
-                    href="/terms-and-conditions"
+                    href="/delivery-information"
                     className="hover:text-ui-fg-base"
                   >
-                    Terms & Condtions
+                    Delivery information
                   </LocalizedClientLink>
                 </li>
-                
+                <li>
+                  <LocalizedClientLink
+                    href="/blog"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Blog
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/manuals"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Manuals
+                  </LocalizedClientLink>
+                </li>
+                {/* <li>
+                  <LocalizedClientLink
+                    href="/contact"
+                    className="hover:text-ui-fg-base"
+                  >
+                    Contact Us
+                  </LocalizedClientLink>
+                </li> */}
               </ul>
             </div>
+            {/* <div className="flex flex-col gap-y-2">
+              <span className="font-semibold text-base">Legal</span>
+              <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
+               
+               
+              </ul>
+            </div> */}
           </div>
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
