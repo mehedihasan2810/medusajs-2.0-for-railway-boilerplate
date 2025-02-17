@@ -2,7 +2,7 @@
 
 import { Popover, Transition } from "@headlessui/react"
 import { ArrowRightMini, XMark, BarsThree } from "@medusajs/icons"
-import { ChevronLeft, ChevronDown, ChevronRight } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import { Text, clx, useToggleState } from "@medusajs/ui"
 import { Fragment, useState } from "react"
 
@@ -135,7 +135,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                               </>
                             ) : (
                               <LocalizedClientLink
-                                href={href}
+                                href={typeof href === 'string' ? href : href.path}
                                 className="text-3xl leading-10 hover:text-neutral-300"
                                 data-testid={`${name.toLowerCase()}-link`}
                               >
