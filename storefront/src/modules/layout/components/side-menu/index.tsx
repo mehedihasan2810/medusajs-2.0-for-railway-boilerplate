@@ -12,6 +12,7 @@ import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Home: "/",
+  Products: "/store",
   "TELECOM Products": {
     path: "/categories/gsm-desk-phones",
     submenu: [
@@ -22,12 +23,15 @@ const SideMenuItems = {
   "CCTV Products": {
     path: "/categories/cctv-products",
     submenu: [
-      { name: "Digital Video Recorders", path: "/categories/digital-video-recorders" },
+      {
+        name: "Digital Video Recorders",
+        path: "/categories/digital-video-recorders",
+      },
       { name: "CCTV Cameras", path: "/categories/cctv-products" },
     ],
   },
   // "CCTV Products": "/categories/cctv-products",
-  Store: "/store",
+
   Search: "/search",
   Account: "/account",
   Cart: "/cart",
@@ -106,7 +110,12 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                                   onClick={() => toggleSubmenu(name)}
                                 >
                                   <span>{name}</span>
-                                  <ChevronRight className={clx("size-8 inline-block shrink-0 transition-transform", openSubmenus[name] ? "rotate-90" : "")} />
+                                  <ChevronRight
+                                    className={clx(
+                                      "size-8 inline-block shrink-0 transition-transform",
+                                      openSubmenus[name] ? "rotate-90" : ""
+                                    )}
+                                  />
                                 </button>
                                 <Transition
                                   show={openSubmenus[name]}
@@ -125,6 +134,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                                           href={subItem.path}
                                           className="text-2xl leading-10 hover:text-neutral-300"
                                           data-testid={`${subItem.name.toLowerCase()}-link`}
+                                          onClick={close}
                                         >
                                           {subItem.name}
                                         </LocalizedClientLink>
@@ -135,9 +145,12 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                               </>
                             ) : (
                               <LocalizedClientLink
-                                href={typeof href === 'string' ? href : href.path}
+                                href={
+                                  typeof href === "string" ? href : href.path
+                                }
                                 className="text-3xl leading-10 hover:text-neutral-300"
                                 data-testid={`${name.toLowerCase()}-link`}
+                                onClick={close}
                               >
                                 {name}
                               </LocalizedClientLink>
